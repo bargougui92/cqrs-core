@@ -1,13 +1,11 @@
 package com.smartec.cqrs.core.commands;
 
 import com.smartec.cqrs.core.messages.Message;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@SuperBuilder
 public abstract class BaseCommand extends Message {
 
     //maybe no need for this
