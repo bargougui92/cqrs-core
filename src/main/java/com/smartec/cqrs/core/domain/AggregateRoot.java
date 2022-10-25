@@ -2,7 +2,6 @@ package com.smartec.cqrs.core.domain;
 
 import com.smartec.cqrs.core.events.BaseEvent;
 
-import java.lang.reflect.InvocationTargetException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,7 @@ public class AggregateRoot {
             logger.log(Level.WARNING, MessageFormat.format("the apply method was not found in the aggregate for {0}", event.getClass().getName()));
             throw new RuntimeException(e);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error applyinh event to aggregate", e);
+            logger.log(Level.SEVERE, "Error applying event to aggregate", e);
         } finally {
             if (isNewEvent) {
                 changes.add(event);
